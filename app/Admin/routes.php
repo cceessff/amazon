@@ -16,5 +16,10 @@ Route::group([
     $router->resource("product",\App\Admin\Controllers\ProductController::class);
     $router->resource("order",\App\Admin\Controllers\OrderController::class);
     $router->resource("member_level",\App\Admin\Controllers\MemberLevelController::class);
+    $router->resource("banner",\App\Admin\Controllers\BannerController::class);
+    $router->resource("customer_service",\App\Admin\Controllers\CustomerServiceController::class);
+    $router->resource("article",\App\Admin\Controllers\UserAddressController::class);
+    $router->resource("notice",\App\Admin\Controllers\NoticeController::class);
+    $router->resource("member",\App\Admin\Controllers\MemberController::class);
 
 });
