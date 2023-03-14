@@ -21,5 +21,6 @@ Route::group([
     $router->resource("article",\App\Admin\Controllers\UserAddressController::class);
     $router->resource("notice",\App\Admin\Controllers\NoticeController::class);
     $router->resource("member",\App\Admin\Controllers\MemberController::class);
+    $router->resource("account_record",\App\Admin\Controllers\AccountRecordController::class);
 
 });

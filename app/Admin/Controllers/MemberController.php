@@ -15,15 +15,17 @@ class MemberController extends AdminController
 
     protected $title = "用户管理";
 
-    public function grid()
+
+    public function grid(): Grid
     {
         return Grid::make(Member::class, function (Grid $grid) {
             $grid->model()->with(['level']);
             $grid->disableViewButton();
             $grid->column("id", "ID");
             $grid->column("username", "用户名");
-            $grid->column("mobile", "手机号码")->display(function ($mobile){
-                return "(+{$this->country_code})$mobile";
+            $grid->column("mobile", "手机号码")->display(function ($mobile,Grid\Column $column){
+                $countryCode=$column->getOriginalModel()->getAttribute("country_code");
+                return "(+{$countryCode})$mobile";
             });
             $grid->column("level.level", "会员等级");
             $grid->column("agent.name", "所属代理");
